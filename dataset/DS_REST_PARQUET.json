@@ -1,0 +1,13 @@
+{
+	"name": "DS_REST_PARQUET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_REST_PARQUET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

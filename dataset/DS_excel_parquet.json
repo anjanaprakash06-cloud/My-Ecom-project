@@ -1,0 +1,22 @@
+{
+	"name": "DS_excel_parquet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_excel_parquet",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Worksheet",
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "olist_order_reviews_dataset.xlsx",
+				"folderPath": "excel",
+				"fileSystem": "input"
+			}
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
