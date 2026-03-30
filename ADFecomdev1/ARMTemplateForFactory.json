@@ -2114,7 +2114,7 @@
 				"schema": [],
 				"typeProperties": {
 					"schema": "dbo",
-					"table": "ecom_tbl_job_dtls"
+					"table": "ecom_tbl_job"
 				}
 			},
 			"dependsOn": [
