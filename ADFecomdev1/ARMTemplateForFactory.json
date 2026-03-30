@@ -205,7 +205,7 @@
 		},
 		"LS_LKUP_SRC_DB_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev1.database.windows.net"
+			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
 		},
 		"LS_LKUP_SRC_DB_properties_typeProperties_database": {
 			"type": "string",
@@ -213,7 +213,7 @@
 		},
 		"LS_LKUP_SRC_DB_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev1"
+			"defaultValue": "sql-srvr-ecom-dev01"
 		},
 		"LS_RESTAPI_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
@@ -2112,7 +2112,10 @@
 				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [],
-				"typeProperties": {}
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "ecom_tbl_job_dtls"
+				}
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_LKUP_SRC_DB')]"
