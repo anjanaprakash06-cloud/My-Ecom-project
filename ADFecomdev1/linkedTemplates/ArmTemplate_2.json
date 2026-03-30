@@ -441,7 +441,7 @@
 					}
 				},
 				"connectVia": {
-					"referenceName": "SelfhostedintegrationRuntime1",
+					"referenceName": "SelfHostedintegrationRuntime",
 					"type": "IntegrationRuntimeReference"
 				}
 			},

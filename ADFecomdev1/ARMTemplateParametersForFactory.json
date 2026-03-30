@@ -129,7 +129,7 @@
 			"value": "sql-srvr-ecom-dev01"
 		},
 		"LS_JSON_PARQUET_properties_typeProperties_url": {
-			"value": "https://adlsecomraw001.dfs.core.windows.net/"
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"LS_JSON_PARQUET_SINK_properties_typeProperties_url": {
 			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
@@ -210,13 +210,13 @@
 			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_properties_typeProperties_url": {
-			"value": "https://adlsecomraw001.dfs.core.windows.net/"
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_sink_properties_typeProperties_url": {
 			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
 		},
 		"LS_excel_parquet_properties_typeProperties_url": {
-			"value": "https://adlsecomraw001.dfs.core.windows.net/"
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"RestService_ecomdev_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/hcXtQU/data"

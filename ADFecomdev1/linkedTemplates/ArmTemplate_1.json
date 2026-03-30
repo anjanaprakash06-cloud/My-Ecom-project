@@ -61,7 +61,7 @@
 		},
 		"LS_bulk_parquet_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_sink_properties_typeProperties_url": {
 			"type": "string",
@@ -69,7 +69,7 @@
 		},
 		"LS_excel_parquet_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"RestService_ecomdev_properties_typeProperties_url": {
 			"type": "string",
@@ -255,7 +255,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SelfhostedintegrationRuntime1')]",
+			"name": "[concat(parameters('factoryName'), '/SelfHostedintegrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
