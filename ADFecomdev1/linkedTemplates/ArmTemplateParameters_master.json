@@ -135,13 +135,13 @@
 			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_server": {
-			"value": "sql-srvr-ecom-dev1.database.windows.net"
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_database": {
 			"value": "sql-db-ecom-dev"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_userName": {
-			"value": "sql-srvr-ecom-dev1"
+			"value": "sql-srvr-ecom-dev01"
 		},
 		"LS_LKUP_SRC_properties_typeProperties_server": {
 			"value": "sql-srvr-ecom-dev1.database.windows.net"
