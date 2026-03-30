@@ -125,7 +125,7 @@
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev1.database.windows.net"
+			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_database": {
 			"type": "string",
@@ -133,7 +133,7 @@
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev1"
+			"defaultValue": "sql-srvr-ecom-dev01"
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",

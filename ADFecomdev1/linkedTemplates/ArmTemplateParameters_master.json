@@ -93,13 +93,13 @@
 			"value": ""
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
-			"value": "sql-srvr-ecom-dev1.database.windows.net"
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_database": {
 			"value": "sql-db-ecom-dev"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_userName": {
-			"value": "sql-srvr-ecom-dev1"
+			"value": "sql-srvr-ecom-dev01"
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsecomraw01.dfs.core.windows.net/"
