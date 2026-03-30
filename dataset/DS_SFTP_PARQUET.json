@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "olist_customers_dataset.csv",
-				"folderPath": "sftp",
+				"folderPath": "SFTP",
 				"fileSystem": "input"
 			},
 			"columnDelimiter": ",",
