@@ -2,7 +2,7 @@
 	"name": "DS_SFTP_PARQUET",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_SFTP1_PARQUET",
+			"referenceName": "LS_SFTP_PARQUET",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
