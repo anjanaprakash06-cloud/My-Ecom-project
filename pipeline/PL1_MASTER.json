@@ -36,16 +36,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL2_RAW_DATA",
+						"referenceName": "pipeline1",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true,
-					"parameters": {
-						"Trigger": {
-							"value": "@pipeline().parameters.Trigger",
-							"type": "Expression"
-						}
-					}
+					"waitOnCompletion": true
 				}
 			}
 		],
