@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "PL1_MASTEr",
+					"referenceName": "PL1_MASTER",
 					"type": "PipelineReference"
 				},
 				"parameters": {
