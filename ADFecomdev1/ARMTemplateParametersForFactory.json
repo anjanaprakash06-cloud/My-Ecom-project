@@ -220,6 +220,9 @@
 		},
 		"Event_Trigger1_properties_typeProperties_scope": {
 			"value": "/subscriptions/083edb0f-11a5-4716-b8eb-5c817c62f084/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom001"
+		},
+		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+			"value": "Tr_sample_csv"
 		}
 	}
 }
