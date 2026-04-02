@@ -57,7 +57,7 @@
 		},
 		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_properties_typeProperties_url": {
 			"type": "string",
@@ -65,7 +65,7 @@
 		},
 		"LS_bulk_parquet_sink_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_excel_parquet_properties_typeProperties_url": {
 			"type": "string",

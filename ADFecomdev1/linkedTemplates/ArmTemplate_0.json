@@ -59,10 +59,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_RESTAPI_PARQUET_SINK'"
 		},
-		"LS_REST_PARQUET_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_REST_PARQUET'"
-		},
 		"LS_SFTP1_PARQUET_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SFTP1_PARQUET'"
@@ -105,7 +101,7 @@
 		},
 		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_Event_Trigger_SF_sink_properties_typeProperties_url": {
 			"type": "string",
@@ -141,7 +137,7 @@
 		},
 		"LS_JSON_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_server": {
 			"type": "string",
@@ -181,23 +177,19 @@
 		},
 		"LS_RESTAPI_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_REST_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://retoolapi.dev/30NRhE/data"
 		},
-		"LS_REST_PARQUET_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "anjana06"
-		},
 		"LS_SFTP1_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_PARQUET1_properties_typeProperties_url": {
 			"type": "string",
@@ -205,7 +197,7 @@
 		},
 		"LS_SFTP_PARQUET_sink_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_SFTP_Sink_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -473,12 +465,7 @@
 				"typeProperties": {
 					"url": "[parameters('LS_REST_PARQUET_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
-					"authenticationType": "Basic",
-					"userName": "[parameters('LS_REST_PARQUET_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_REST_PARQUET_password')]"
-					}
+					"authenticationType": "Anonymous"
 				}
 			},
 			"dependsOn": []
