@@ -39,7 +39,7 @@
 						"referenceName": "PL2_RAW_DATA",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true,
+					"waitOnCompletion": false,
 					"parameters": {
 						"Trigger": {
 							"value": "@pipeline().parameters.Trigger",
