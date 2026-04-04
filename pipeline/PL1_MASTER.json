@@ -18,35 +18,6 @@
 						"type": "Expression"
 					}
 				}
-			},
-			{
-				"name": "Exec_pipleine",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "SET_VAR_TRIGGER",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "PL2_RAW_DATA",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": false,
-					"parameters": {
-						"Trigger": {
-							"value": "@pipeline().parameters.Trigger",
-							"type": "Expression"
-						}
-					}
-				}
 			}
 		],
 		"parameters": {
