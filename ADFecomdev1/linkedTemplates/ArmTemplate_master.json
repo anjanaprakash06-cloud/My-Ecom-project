@@ -576,6 +576,9 @@
 					},
 					"LS_SQL_PARQUET_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_userName')]"
+					},
+					"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+						"value": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"
 					}
 				}
 			},
@@ -596,9 +599,6 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
-					},
-					"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
-						"value": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"
 					},
 					"Event_Trigger1_properties_typeProperties_scope": {
 						"value": "[parameters('Event_Trigger1_properties_typeProperties_scope')]"
