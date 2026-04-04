@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFecomdev1"
 		},
-		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
-			"type": "string",
-			"defaultValue": "Tr_sample_csv"
-		},
 		"Event_Trigger1_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/083edb0f-11a5-4716-b8eb-5c817c62f084/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom001"
@@ -329,36 +325,6 @@
 				"typeProperties": {
 					"schema": "dbo",
 					"table": "olist_orders_dataset"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Tr_sample_csv')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PL1_MASTER",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"Trigger": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"
-						}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2026-04-01T17:25:00",
-						"timeZone": "India Standard Time"
-					}
 				}
 			},
 			"dependsOn": []
