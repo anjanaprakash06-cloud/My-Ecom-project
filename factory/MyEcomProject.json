@@ -1,0 +1,9 @@
+{
+	"name": "MyEcomProject",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8a1f6ef0-d018-41f7-b1ef-8b0a1c045233",
+		"tenantId": "a807f94b-c3d8-4cf0-8168-4ebf589981a9"
+	}
+}
