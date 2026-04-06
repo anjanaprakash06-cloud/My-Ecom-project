@@ -20,7 +20,7 @@
 				}
 			},
 			{
-				"name": "Execute Pipeline1",
+				"name": "ExecPipeline",
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
