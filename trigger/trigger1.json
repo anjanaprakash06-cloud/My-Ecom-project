@@ -1,12 +1,12 @@
 {
-	"name": "Tr_sample_csv",
+	"name": "trigger1",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "PL1_MASTER",
+					"referenceName": "PL1_MASTER1",
 					"type": "PipelineReference"
 				},
 				"parameters": {
@@ -19,7 +19,7 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2026-04-01T17:25:00",
+				"startTime": "2026-04-07T20:00:00",
 				"timeZone": "India Standard Time"
 			}
 		}
