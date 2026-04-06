@@ -11,10 +11,10 @@
 			"trustServerCertificate": true,
 			"authenticationType": "SQL",
 			"userName": "anjana06",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIzZTZmMmM4MS04NWY2LTQ1NDEtYmYyYi1kNTllMjk3NDQxYjAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI5ZWNmODJhNi0yMWE2LTRlMWQtOGM4ZS00NTQ4NjcxNDViZmYiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "SelfhostedintegrationRuntime1",
+			"referenceName": "SelfHostedintegrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
