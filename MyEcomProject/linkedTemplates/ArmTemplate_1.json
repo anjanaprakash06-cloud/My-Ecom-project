@@ -255,7 +255,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SelfHostedintegrationRuntime')]",
+			"name": "[concat(parameters('factoryName'), '/SelfhostedintegrationRuntime1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
