@@ -291,11 +291,7 @@
 			"type": "string",
 			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
-		"Event_Trigger1_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/083edb0f-11a5-4716-b8eb-5c817c62f084/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom001"
-		},
-		"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
+		"trigger1_properties_PL1_MASTER1_parameters_Trigger": {
 			"type": "string",
 			"defaultValue": "Tr_sample_csv"
 		},
@@ -379,6 +375,9 @@
 					},
 					"LS_SFTP_Sink_PARQUET_accountKey": {
 						"value": "[parameters('LS_SFTP_Sink_PARQUET_accountKey')]"
+					},
+					"LS_SF_EVENT_TRIGGER_connectionString": {
+						"value": "[parameters('LS_SF_EVENT_TRIGGER_connectionString')]"
 					},
 					"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 						"value": "[parameters('LS_CSV_EXCEL_SQLDB_properties_typeProperties_server')]"
@@ -488,9 +487,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_SF_EVENT_TRIGGER_connectionString": {
-						"value": "[parameters('LS_SF_EVENT_TRIGGER_connectionString')]"
-					},
 					"LS_SF_EVENT_TRIGGER_SINK_accountKey": {
 						"value": "[parameters('LS_SF_EVENT_TRIGGER_SINK_accountKey')]"
 					},
@@ -576,9 +572,6 @@
 					},
 					"LS_SQL_PARQUET_properties_typeProperties_userName": {
 						"value": "[parameters('LS_SQL_PARQUET_properties_typeProperties_userName')]"
-					},
-					"Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger": {
-						"value": "[parameters('Tr_sample_csv_properties_PL1_MASTER_parameters_Trigger')]"
 					}
 				}
 			},
@@ -600,8 +593,8 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"Event_Trigger1_properties_typeProperties_scope": {
-						"value": "[parameters('Event_Trigger1_properties_typeProperties_scope')]"
+					"trigger1_properties_PL1_MASTER1_parameters_Trigger": {
+						"value": "[parameters('trigger1_properties_PL1_MASTER1_parameters_Trigger')]"
 					}
 				}
 			},
