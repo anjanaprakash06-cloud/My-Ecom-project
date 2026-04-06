@@ -290,6 +290,10 @@
 		"lS_CSV_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"trigger1_properties_PL1_MASTER1_parameters_Trigger": {
+			"type": "string",
+			"defaultValue": "Tr_sample_csv"
 		}
 	},
 	"variables": {
@@ -318,35 +322,6 @@
 								"type": "Expression"
 							}
 						}
-					},
-					{
-						"name": "Exec_Pipeline2",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "SET_VAR_TRIGGER",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "PL2_RAW_DATA",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"Trigger": {
-									"value": "@pipeline().parameters.Trigger",
-									"type": "Expression"
-								}
-							}
-						}
 					}
 				],
 				"policy": {
@@ -364,9 +339,7 @@
 				},
 				"annotations": []
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL2_RAW_DATA')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PL2_RAW_DATA')]",
@@ -3101,6 +3074,38 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL1_MASTER1",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"Trigger": "[parameters('trigger1_properties_PL1_MASTER1_parameters_Trigger')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Minute",
+						"interval": 15,
+						"startTime": "2026-04-07T20:00:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL1_MASTER1')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/SelfhostedintegrationRuntime1')]",
