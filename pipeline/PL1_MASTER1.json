@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "SET_VAR_TRIGGER1",
+				"name": "SET_VAR_TRIGGER",
 				"type": "SetVariable",
 				"dependsOn": [],
 				"policy": {
