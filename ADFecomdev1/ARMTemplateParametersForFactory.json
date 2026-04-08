@@ -217,9 +217,6 @@
 		},
 		"lS_CSV_PARQUET_SINK_properties_typeProperties_url": {
 			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
-		},
-		"trigger1_properties_PL1_MASTER1_parameters_Trigger": {
-			"value": "Tr_sample_csv"
 		}
 	}
 }
