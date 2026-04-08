@@ -32,7 +32,7 @@
 				}
 			},
 			{
-				"name": "SWITCH_SOURCE",
+				"name": "SWITCH_SOURC",
 				"type": "Switch",
 				"dependsOn": [
 					{
