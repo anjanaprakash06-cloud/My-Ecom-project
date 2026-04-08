@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "LKUP_L2_TYP",
+				"name": "LKUP_L2_TYPE",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -36,7 +36,7 @@
 				"type": "Switch",
 				"dependsOn": [
 					{
-						"activity": "LKUP_L2_TYP",
+						"activity": "LKUP_L2_TYPE",
 						"dependencyConditions": [
 							"Succeeded"
 						]
