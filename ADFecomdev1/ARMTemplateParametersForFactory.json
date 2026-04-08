@@ -1,0 +1,225 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFecomdev1"
+		},
+		"LS_CSV_EXCEL_SQLDB_password": {
+			"value": ""
+		},
+		"LS_CSV_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_EXCEL_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_Event_Trigger_SF_connectionString": {
+			"value": ""
+		},
+		"LS_Event_Trigger_SF_sink_accountKey": {
+			"value": ""
+		},
+		"LS_Event_Trigger_SQLDB_password": {
+			"value": ""
+		},
+		"LS_JOB_DETAILS_SQLDB_password": {
+			"value": ""
+		},
+		"LS_JSON_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_JSON_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_LKUP_SQLDB_password": {
+			"value": ""
+		},
+		"LS_LKUP_SRC_password": {
+			"value": ""
+		},
+		"LS_LKUP_SRC_DB_password": {
+			"value": ""
+		},
+		"LS_RESTAPI_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP1_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_PARQUET1_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_PARQUET_sink_accountKey": {
+			"value": ""
+		},
+		"LS_SFTP_Sink_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SF_EVENT_TRIGGER_connectionString": {
+			"value": ""
+		},
+		"LS_SF_EVENT_TRIGGER_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_PARQUET_password": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_SQL_PARQUET_password": {
+			"value": ""
+		},
+		"LS_SQL_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_bulk_parquet_accountKey": {
+			"value": ""
+		},
+		"LS_bulk_parquet_sink_accountKey": {
+			"value": ""
+		},
+		"LS_excel_parquet_accountKey": {
+			"value": ""
+		},
+		"lS_CSV_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
+		},
+		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev01"
+		},
+		"LS_CSV_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"LS_Event_Trigger_SF_sink_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
+		},
+		"LS_Event_Trigger_SQLDB_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev1.database.windows.net"
+		},
+		"LS_Event_Trigger_SQLDB_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_Event_Trigger_SQLDB_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev1"
+		},
+		"LS_JOB_DETAILS_SQLDB_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
+		},
+		"LS_JOB_DETAILS_SQLDB_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_JOB_DETAILS_SQLDB_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev01"
+		},
+		"LS_JSON_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_JSON_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"LS_LKUP_SQLDB_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
+		},
+		"LS_LKUP_SQLDB_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_LKUP_SQLDB_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev01"
+		},
+		"LS_LKUP_SRC_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev1.database.windows.net"
+		},
+		"LS_LKUP_SRC_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_LKUP_SRC_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev1"
+		},
+		"LS_LKUP_SRC_DB_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
+		},
+		"LS_LKUP_SRC_DB_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_LKUP_SRC_DB_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev01"
+		},
+		"LS_RESTAPI_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"LS_REST_PARQUET_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/30NRhE/data"
+		},
+		"LS_SFTP1_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PARQUET1_properties_typeProperties_url": {
+			"value": "https://adlsecomraw001.dfs.core.windows.net/"
+		},
+		"LS_SFTP_PARQUET_sink_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"LS_SFTP_Sink_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
+		},
+		"LS_SF_EVENT_TRIGGER_SINK_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_PARQUET_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
+		},
+		"LS_SNOWFLAKE_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc001.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_SINK_PARQUET1_sasUri": {
+			"value": ""
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_server": {
+			"value": "ANJANAAJITH\\SQLEXPRESS07"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_database": {
+			"value": "db_ecomproject"
+		},
+		"LS_SQL_PARQUET_properties_typeProperties_userName": {
+			"value": "anjana06"
+		},
+		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"LS_bulk_parquet_properties_typeProperties_url": {
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_bulk_parquet_sink_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"LS_excel_parquet_properties_typeProperties_url": {
+			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"RestService_ecomdev_properties_typeProperties_url": {
+			"value": "https://retoolapi.dev/hcXtQU/data"
+		},
+		"lS_CSV_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"trigger1_properties_PL1_MASTER1_parameters_Trigger": {
+			"value": "Tr_sample_csv"
+		}
+	}
+}
