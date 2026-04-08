@@ -1,9 +1,0 @@
-{
-	"name": "ADFecomdev1",
-	"location": "centralindia",
-	"identity": {
-		"type": "SystemAssigned",
-		"principalId": "ed6b2066-3050-4a88-84df-760fcf7ba3f1",
-		"tenantId": "a807f94b-c3d8-4cf0-8168-4ebf589981a9"
-	}
-}
