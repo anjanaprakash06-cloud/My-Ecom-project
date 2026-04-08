@@ -36,7 +36,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
-						"referenceName": "PL2_RAW_DATA",
+						"referenceName": "PL3_CLOUDSG_CSV_EXCEL",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true,
