@@ -329,6 +329,9 @@
 					"LS_SNOWFLAKE_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET_accountKey')]"
 					},
+					"LS_SQL_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
+					},
 					"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 						"value": "[parameters('LS_CSV_EXCEL_SQLDB_properties_typeProperties_server')]"
 					},
@@ -415,6 +418,9 @@
 					},
 					"LS_SNOWFLAKE_SINK_PARQUET1_sasUri": {
 						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET1_sasUri')]"
+					},
+					"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -434,9 +440,6 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_SQL_SINK_PARQUET_accountKey": {
-						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
-					},
 					"LS_bulk_parquet_accountKey": {
 						"value": "[parameters('LS_bulk_parquet_accountKey')]"
 					},
@@ -448,9 +451,6 @@
 					},
 					"lS_CSV_PARQUET_SINK_accountKey": {
 						"value": "[parameters('lS_CSV_PARQUET_SINK_accountKey')]"
-					},
-					"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]"
 					},
 					"LS_bulk_parquet_properties_typeProperties_url": {
 						"value": "[parameters('LS_bulk_parquet_properties_typeProperties_url')]"

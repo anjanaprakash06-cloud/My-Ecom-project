@@ -7,10 +7,6 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ADFecomdev1"
 		},
-		"LS_SQL_SINK_PARQUET_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SQL_SINK_PARQUET'"
-		},
 		"LS_bulk_parquet_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_bulk_parquet'"
@@ -26,10 +22,6 @@
 		"lS_CSV_PARQUET_SINK_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'lS_CSV_PARQUET_SINK'"
-		},
-		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_properties_typeProperties_url": {
 			"type": "string",
@@ -56,23 +48,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQL_SINK_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_bulk_parquet')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -634,6 +609,53 @@
 					{
 						"name": "customer_state",
 						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_SFTP_sink_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_SFTP_PARQUET_sink",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": {
+							"value": "@concat(\n    'SFTP/',\n    formatDateTime(utcNow(), 'yyyy'),'/',\n    formatDateTime(utcNow(), 'MM'),'/',\n    formatDateTime(utcNow(), 'dd')\n)",
+							"type": "Expression"
+						},
+						"fileSystem": "output"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "geolocation_zip_code_prefix",
+						"type": "UTF8"
+					},
+					{
+						"name": "geolocation_lat",
+						"type": "UTF8"
+					},
+					{
+						"name": "geolocation_lng",
+						"type": "UTF8"
+					},
+					{
+						"name": "geolocation_city",
+						"type": "UTF8"
+					},
+					{
+						"name": "geolocation_state",
+						"type": "UTF8"
 					}
 				]
 			},

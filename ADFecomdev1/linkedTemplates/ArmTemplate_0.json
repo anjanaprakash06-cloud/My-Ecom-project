@@ -75,6 +75,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SNOWFLAKE_SINK_PARQUET'"
 		},
+		"LS_SQL_SINK_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SQL_SINK_PARQUET'"
+		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
@@ -190,54 +194,16 @@
 		"LS_SNOWFLAKE_SINK_PARQUET1_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'LS_SNOWFLAKE_SINK_PARQUET1'"
+		},
+		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/PL1_MASTER1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "SET_VAR_TRIGGER",
-						"type": "SetVariable",
-						"dependsOn": [],
-						"policy": {
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"variableName": "Trigger_variable",
-							"value": {
-								"value": "@if(equals(pipeline().parameters.Trigger, null),pipeline().TriggerName,pipeline().parameters.Trigger)",
-								"type": "Expression"
-							}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"Trigger": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"Trigger_variable": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-04-04T06:37:52Z"
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/LS_CSV_EXCEL_SQLDB')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
@@ -582,6 +548,23 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"sasUri": "[parameters('LS_SNOWFLAKE_SINK_PARQUET1_sasUri')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SQL_SINK_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
+					}
 				}
 			},
 			"dependsOn": []
