@@ -11,6 +11,12 @@
 		"LS_CSV_PARQUET_accountKey": {
 			"value": ""
 		},
+		"LS_EVENTTRIGGER_SF_connectionString": {
+			"value": ""
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_accountKey": {
+			"value": ""
+		},
 		"LS_EXCEL_PARQUET_SINK_accountKey": {
 			"value": ""
 		},
@@ -85,6 +91,9 @@
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"value": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url": {
+			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
@@ -187,6 +196,9 @@
 		},
 		"lS_CSV_PARQUET_SINK_properties_typeProperties_url": {
 			"value": "https://adlsecomsrc01.dfs.core.windows.net/"
+		},
+		"EventTrigger_SF_properties_typeProperties_scope": {
+			"value": "/subscriptions/3d012294-ebb5-41a3-b713-8b52c471d0ce/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom0001"
 		},
 		"Trigger_csv_properties_PL1_MASTER1_parameters_Trigger": {
 			"value": "Tr_sample_csv"

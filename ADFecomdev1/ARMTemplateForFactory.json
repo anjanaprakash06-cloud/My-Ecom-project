@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET'"
 		},
+		"LS_EVENTTRIGGER_SF_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_EVENTTRIGGER_SF'"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_TRIGGER_SF_SINK'"
+		},
 		"LS_EXCEL_PARQUET_SINK_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET_SINK'"
@@ -114,6 +122,10 @@
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
@@ -251,6 +263,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
+		"EventTrigger_SF_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/3d012294-ebb5-41a3-b713-8b52c471d0ce/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom0001"
+		},
 		"Trigger_csv_properties_PL1_MASTER1_parameters_Trigger": {
 			"type": "string",
 			"defaultValue": "Tr_sample_csv"
@@ -260,6 +276,82 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
+		{
+			"name": "[concat(parameters('factoryName'), '/EVENT_TRIGGER_SNOWFLAKE')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "COPY_EVENT_TRIGGER_SF",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "ParquetSource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"wildcardFileName": "*.parquet",
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "ParquetReadSettings"
+								}
+							},
+							"sink": {
+								"type": "ParquetSink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings"
+								},
+								"formatSettings": {
+									"type": "ParquetWriteSettings"
+								}
+							},
+							"enableStaging": false,
+							"translator": {
+								"type": "TabularTranslator",
+								"typeConversion": true,
+								"typeConversionSettings": {
+									"allowDataTruncation": true,
+									"treatBooleanAsNumber": false
+								}
+							}
+						},
+						"inputs": [
+							{
+								"referenceName": "DS_EVENTTRIGGER_SF",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "DS_EVENT_TRIGGER_SF_SINK",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/DS_EVENTTRIGGER_SF')]",
+				"[concat(variables('factoryId'), '/datasets/DS_EVENT_TRIGGER_SF_SINK')]"
+			]
+		},
 		{
 			"name": "[concat(parameters('factoryName'), '/PL1_MASTER1')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -1634,6 +1726,97 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DS_EVENTTRIGGER_SF')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_EVENTTRIGGER_SF",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"folderPath": "SNOWFLAKE",
+						"container": "output"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": [
+					{
+						"name": "INDEX",
+						"type": "DECIMAL",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "ORDER_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "ORDER_ITEM_ID",
+						"type": "DECIMAL",
+						"precision": 38,
+						"scale": 0
+					},
+					{
+						"name": "PRODUCT_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "SELLER_ID",
+						"type": "UTF8"
+					},
+					{
+						"name": "SHIPPING_LIMIT_DATE",
+						"type": "TIMESTAMP_MILLIS"
+					},
+					{
+						"name": "PRICE",
+						"type": "DECIMAL",
+						"precision": 10,
+						"scale": 2
+					},
+					{
+						"name": "FREIGHT_VALUE",
+						"type": "DECIMAL",
+						"precision": 10,
+						"scale": 2
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_EVENTTRIGGER_SF')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_EVENT_TRIGGER_SF_SINK')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_EVENT_TRIGGER_SF_SINK",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Parquet",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "EVENT TRIGGER",
+						"fileSystem": "output"
+					},
+					"compressionCodec": "snappy"
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_EVENT_TRIGGER_SF_SINK')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DS_EXCEL_PARQUET_SINK')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -2380,6 +2563,36 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_EVENTTRIGGER_SF')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_EVENTTRIGGER_SF_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_EVENT_TRIGGER_SF_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EVENT_TRIGGER_SF_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_EXCEL_PARQUET_SINK')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -2815,6 +3028,36 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/EventTrigger_SF')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "EVENT_TRIGGER_SNOWFLAKE",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/output/blobs/",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('EventTrigger_SF_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/EVENT_TRIGGER_SNOWFLAKE')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Trigger_csv')]",

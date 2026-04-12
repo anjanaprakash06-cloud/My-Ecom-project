@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET'"
 		},
+		"LS_EVENTTRIGGER_SF_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_EVENTTRIGGER_SF'"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_TRIGGER_SF_SINK'"
+		},
 		"LS_EXCEL_PARQUET_SINK_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET_SINK'"
@@ -114,6 +122,10 @@
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
@@ -251,6 +263,10 @@
 			"type": "string",
 			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
+		"EventTrigger_SF_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/3d012294-ebb5-41a3-b713-8b52c471d0ce/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom0001"
+		},
 		"Trigger_csv_properties_PL1_MASTER1_parameters_Trigger": {
 			"type": "string",
 			"defaultValue": "Tr_sample_csv"
@@ -287,6 +303,12 @@
 					},
 					"LS_CSV_PARQUET_accountKey": {
 						"value": "[parameters('LS_CSV_PARQUET_accountKey')]"
+					},
+					"LS_EVENTTRIGGER_SF_connectionString": {
+						"value": "[parameters('LS_EVENTTRIGGER_SF_connectionString')]"
+					},
+					"LS_EVENT_TRIGGER_SF_SINK_accountKey": {
+						"value": "[parameters('LS_EVENT_TRIGGER_SF_SINK_accountKey')]"
 					},
 					"LS_EXCEL_PARQUET_SINK_accountKey": {
 						"value": "[parameters('LS_EXCEL_PARQUET_SINK_accountKey')]"
@@ -333,9 +355,6 @@
 					"LS_SNOWFLAKE_SINK_PARQUET_accountKey": {
 						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET_accountKey')]"
 					},
-					"LS_SQL_SINK_PARQUET_accountKey": {
-						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
-					},
 					"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 						"value": "[parameters('LS_CSV_EXCEL_SQLDB_properties_typeProperties_server')]"
 					},
@@ -347,6 +366,9 @@
 					},
 					"LS_CSV_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_CSV_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url')]"
 					},
 					"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 						"value": "[parameters('LS_EXCEL_PARQUET_SINK_properties_typeProperties_url')]"
@@ -419,12 +441,6 @@
 					},
 					"LS_SNOWFLAKE_SINK_PARQUET_properties_typeProperties_url": {
 						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET_properties_typeProperties_url')]"
-					},
-					"LS_SNOWFLAKE_SINK_PARQUET1_sasUri": {
-						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET1_sasUri')]"
-					},
-					"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -444,6 +460,9 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_SQL_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
+					},
 					"LS_bulk_parquet_accountKey": {
 						"value": "[parameters('LS_bulk_parquet_accountKey')]"
 					},
@@ -455,6 +474,12 @@
 					},
 					"lS_CSV_PARQUET_SINK_accountKey": {
 						"value": "[parameters('lS_CSV_PARQUET_SINK_accountKey')]"
+					},
+					"LS_SNOWFLAKE_SINK_PARQUET1_sasUri": {
+						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET1_sasUri')]"
+					},
+					"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]"
 					},
 					"LS_bulk_parquet_properties_typeProperties_url": {
 						"value": "[parameters('LS_bulk_parquet_properties_typeProperties_url')]"
@@ -522,6 +547,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"EventTrigger_SF_properties_typeProperties_scope": {
+						"value": "[parameters('EventTrigger_SF_properties_typeProperties_scope')]"
 					},
 					"Trigger_csv_properties_PL1_MASTER1_parameters_Trigger": {
 						"value": "[parameters('Trigger_csv_properties_PL1_MASTER1_parameters_Trigger')]"

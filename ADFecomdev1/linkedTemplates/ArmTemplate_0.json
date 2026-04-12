@@ -15,6 +15,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET'"
 		},
+		"LS_EVENTTRIGGER_SF_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_EVENTTRIGGER_SF'"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EVENT_TRIGGER_SF_SINK'"
+		},
 		"LS_EXCEL_PARQUET_SINK_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET_SINK'"
@@ -75,10 +83,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_SNOWFLAKE_SINK_PARQUET'"
 		},
-		"LS_SQL_SINK_PARQUET_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_SQL_SINK_PARQUET'"
-		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
@@ -94,6 +98,10 @@
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+		},
+		"LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		},
 		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
@@ -190,14 +198,6 @@
 		"LS_SNOWFLAKE_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://adlsecomsrc001.dfs.core.windows.net/"
-		},
-		"LS_SNOWFLAKE_SINK_PARQUET1_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'LS_SNOWFLAKE_SINK_PARQUET1'"
-		},
-		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -238,6 +238,36 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_CSV_PARQUET_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_EVENTTRIGGER_SF')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_EVENTTRIGGER_SF_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_EVENT_TRIGGER_SF_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EVENT_TRIGGER_SF_SINK_accountKey')]"
 					}
 				}
 			},
@@ -534,36 +564,6 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_SNOWFLAKE_SINK_PARQUET_accountKey')]"
-					}
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SNOWFLAKE_SINK_PARQUET1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('LS_SNOWFLAKE_SINK_PARQUET1_sasUri')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SQL_SINK_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('LS_SQL_SINK_PARQUET_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SQL_SINK_PARQUET_accountKey')]"
 					}
 				}
 			},
