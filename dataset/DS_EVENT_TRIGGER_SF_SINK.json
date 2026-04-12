@@ -1,0 +1,20 @@
+{
+	"name": "DS_EVENT_TRIGGER_SF_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_EVENT_TRIGGER_SF_SINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "EVENT TRIGGER",
+				"fileSystem": "output"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}

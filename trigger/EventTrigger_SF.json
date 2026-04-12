@@ -1,0 +1,24 @@
+{
+	"name": "EventTrigger_SF",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "EVENT_TRIGGER_SNOWFLAKE",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/output/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/3d012294-ebb5-41a3-b713-8b52c471d0ce/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom0001",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
