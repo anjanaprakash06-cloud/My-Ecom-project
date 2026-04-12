@@ -2644,8 +2644,8 @@
 				"type": "SnowflakeV2",
 				"typeProperties": {
 					"authenticationType": "Basic",
-					"accountIdentifier": "JPOXIWM-WP65867",
-					"user": "AnjanaPrakash",
+					"accountIdentifier": "FFHFUDH-AQ30352",
+					"user": "ANJANAPRAKASHADE",
 					"database": "[parameters('LS_SNOWFLAKE_PARQUET_properties_typeProperties_database')]",
 					"warehouse": "COMPUTE_WH",
 					"password": {
@@ -2817,6 +2817,38 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Trigger_csv')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "PL1_MASTER1",
+							"type": "PipelineReference"
+						},
+						"parameters": {
+							"Trigger": "[parameters('Trigger_csv_properties_PL1_MASTER1_parameters_Trigger')]"
+						}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2026-04-09T18:00:00",
+						"timeZone": "India Standard Time"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/PL1_MASTER1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SelfHostedintegrationRuntime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -2835,39 +2867,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Trigger_csv')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "PL1_MASTER1",
-							"type": "PipelineReference"
-						},
-						"parameters": {
-							"Trigger": "[parameters('Trigger_csv_properties_PL1_MASTER1_parameters_Trigger')]"
-						}
-					}
-				],
-				"type": "ScheduleTrigger",
-				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2026-04-09T18:00:00",
-						"timeZone": "India Standard Time",
-						"schedule": {}
-					}
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL1_MASTER1')]"
-			]
 		}
 	]
 }

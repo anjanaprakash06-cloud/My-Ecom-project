@@ -508,8 +508,8 @@
 				"type": "SnowflakeV2",
 				"typeProperties": {
 					"authenticationType": "Basic",
-					"accountIdentifier": "JPOXIWM-WP65867",
-					"user": "AnjanaPrakash",
+					"accountIdentifier": "FFHFUDH-AQ30352",
+					"user": "ANJANAPRAKASHADE",
 					"database": "[parameters('LS_SNOWFLAKE_PARQUET_properties_typeProperties_database')]",
 					"warehouse": "COMPUTE_WH",
 					"password": {
