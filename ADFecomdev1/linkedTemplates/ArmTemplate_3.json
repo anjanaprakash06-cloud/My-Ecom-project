@@ -126,7 +126,7 @@
 							},
 							"cases": [
 								{
-									"value": "Excel",
+									"value": "excel",
 									"activities": [
 										{
 											"name": "EXEC_EXCEL_PARQUET",
