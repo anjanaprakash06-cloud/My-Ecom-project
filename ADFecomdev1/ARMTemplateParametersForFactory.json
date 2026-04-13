@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "ADFecomdev1"
 		},
+		"LS_AZUREDB_METADATA_password": {
+			"value": ""
+		},
 		"LS_CSV_EXCEL_SQLDB_password": {
 			"value": ""
 		},
@@ -79,6 +82,15 @@
 		},
 		"lS_CSV_PARQUET_SINK_accountKey": {
 			"value": ""
+		},
+		"LS_AZUREDB_METADATA_properties_typeProperties_server": {
+			"value": "sql-srvr-ecom-dev01.database.windows.net"
+		},
+		"LS_AZUREDB_METADATA_properties_typeProperties_database": {
+			"value": "sql-db-ecom-dev"
+		},
+		"LS_AZUREDB_METADATA_properties_typeProperties_userName": {
+			"value": "sql-srvr-ecom-dev01"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 			"value": "sql-srvr-ecom-dev01.database.windows.net"
