@@ -52,12 +52,19 @@
 							"value": "Excel",
 							"activities": [
 								{
-									"name": "Wait1",
-									"type": "Wait",
+									"name": "EXEC_EXCEL_PARQUET",
+									"type": "ExecutePipeline",
 									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitTimeInSeconds": 1
+										"pipeline": {
+											"referenceName": "PL_EXCEL_PARQUET",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true
 									}
 								}
 							]
