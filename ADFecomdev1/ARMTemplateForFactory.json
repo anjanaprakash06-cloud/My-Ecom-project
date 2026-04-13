@@ -778,12 +778,20 @@
 									"value": "Excel",
 									"activities": [
 										{
-											"name": "Wait1",
-											"type": "Wait",
+											"name": "EXEC_EXCEL_PARQUET",
+											"type": "ExecutePipeline",
 											"dependsOn": [],
+											"policy": {
+												"secureInput": false
+											},
 											"userProperties": [],
 											"typeProperties": {
-												"waitTimeInSeconds": 1
+												"pipeline": {
+													"referenceName": "PL_EXCEL_PARQUET",
+													"type": "PipelineReference"
+												},
+												"waitOnCompletion": true,
+												"parameters": {}
 											}
 										}
 									]
@@ -837,6 +845,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DS_CSV_EXCEL_SQLDB')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_EXCEL_PARQUET')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_CSV_PARQUET')]"
 			]
 		},
