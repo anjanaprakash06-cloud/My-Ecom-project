@@ -41,19 +41,19 @@
 		},
 		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_sink_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_excel_parquet_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"RestService_ecomdev_properties_typeProperties_url": {
 			"type": "string",
@@ -61,7 +61,7 @@
 		},
 		"lS_CSV_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -199,17 +199,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SelfHostedintegrationRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/SelfhostedintegrationRuntime1')]",
+			"name": "[concat(parameters('factoryName'), '/SelfHostedintegrationRuntime1')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -674,6 +664,25 @@
 						"type": "UTF8"
 					}
 				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_LKUP_SQLDB')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_LKUP_SQLDB",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "ecom_tbl_job"
+				}
 			},
 			"dependsOn": []
 		}

@@ -113,71 +113,71 @@
 		},
 		"LS_AZUREDB_METADATA_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
+			"defaultValue": "sqlserver-ecom01.database.windows.net"
 		},
 		"LS_AZUREDB_METADATA_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "sql-db-ecom-dev"
+			"defaultValue": "sqldatabase-ecom1"
 		},
 		"LS_AZUREDB_METADATA_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01"
+			"defaultValue": "sqlserver-ecom01"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
+			"defaultValue": "sqlserver-ecom01.database.windows.net"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "sql-db-ecom-dev"
+			"defaultValue": "sqldatabase-ecom1"
 		},
 		"LS_CSV_EXCEL_SQLDB_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01"
+			"defaultValue": "sqlserver-ecom01"
 		},
 		"LS_CSV_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"LS_EVENT_TRIGGER_SF_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_JOB_DETAILS_SQLDB_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
+			"defaultValue": "sqlserver-ecom01.database.windows.net"
 		},
 		"LS_JOB_DETAILS_SQLDB_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "sql-db-ecom-dev"
+			"defaultValue": "sqldatabase-ecom1"
 		},
 		"LS_JOB_DETAILS_SQLDB_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01"
+			"defaultValue": "sqlserver-ecom01"
 		},
 		"LS_JSON_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"LS_JSON_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
+			"defaultValue": "sqlserver-ecom01.database.windows.net"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "sql-db-ecom-dev"
+			"defaultValue": "sqldatabase-ecom1"
 		},
 		"LS_LKUP_SQLDB_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01"
+			"defaultValue": "sqlserver-ecom01"
 		},
 		"LS_LKUP_SRC_properties_typeProperties_server": {
 			"type": "string",
@@ -193,19 +193,19 @@
 		},
 		"LS_LKUP_SRC_DB_properties_typeProperties_server": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01.database.windows.net"
+			"defaultValue": "sqlserver-ecom01.database.windows.net"
 		},
 		"LS_LKUP_SRC_DB_properties_typeProperties_database": {
 			"type": "string",
-			"defaultValue": "sql-db-ecom-dev"
+			"defaultValue": "sqldatabase-ecom1"
 		},
 		"LS_LKUP_SRC_DB_properties_typeProperties_userName": {
 			"type": "string",
-			"defaultValue": "sql-srvr-ecom-dev01"
+			"defaultValue": "sqlserver-ecom01"
 		},
 		"LS_RESTAPI_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_REST_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -217,7 +217,7 @@
 		},
 		"LS_SFTP_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"LS_SFTP_PARQUET1_properties_typeProperties_url": {
 			"type": "string",
@@ -225,7 +225,7 @@
 		},
 		"LS_SFTP_PARQUET_sink_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_SFTP_Sink_PARQUET_properties_typeProperties_url": {
 			"type": "string",
@@ -257,19 +257,19 @@
 		},
 		"LS_SQL_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"LS_bulk_parquet_sink_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"LS_excel_parquet_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomraw01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomraw001.dfs.core.windows.net/"
 		},
 		"RestService_ecomdev_properties_typeProperties_url": {
 			"type": "string",
@@ -277,7 +277,7 @@
 		},
 		"lS_CSV_PARQUET_SINK_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://adlsecomsrc01.dfs.core.windows.net/"
+			"defaultValue": "https://adlsecomsrc02.dfs.core.windows.net/"
 		},
 		"EventTrigger_SF_properties_typeProperties_scope": {
 			"type": "string",
