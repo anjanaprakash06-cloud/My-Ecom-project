@@ -15,7 +15,7 @@
 		"typeProperties": {
 			"blobPathBeginsWith": "/output/blobs/",
 			"ignoreEmptyBlobs": true,
-			"scope": "/subscriptions/3d012294-ebb5-41a3-b713-8b52c471d0ce/resourceGroups/rg_ecomdev_001/providers/Microsoft.Storage/storageAccounts/blobecom0001",
+			"scope": "/subscriptions/deb04c9d-ca01-4a7f-8c81-337f4ddf6bcb/resourceGroups/rg_ecomproject/providers/Microsoft.Storage/storageAccounts/blobecom01",
 			"events": [
 				"Microsoft.Storage.BlobCreated",
 				"Microsoft.Storage.BlobDeleted"
