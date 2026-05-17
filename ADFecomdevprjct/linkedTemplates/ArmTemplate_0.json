@@ -568,8 +568,8 @@
 				"type": "SnowflakeV2",
 				"typeProperties": {
 					"authenticationType": "Basic",
-					"accountIdentifier": "FFHFUDH-AQ30352",
-					"user": "anjanaprakashADE",
+					"accountIdentifier": "YTIAHSW-YG15521",
+					"user": "anjanaade",
 					"database": "[parameters('LS_SNOWFLAKE_PARQUET_properties_typeProperties_database')]",
 					"warehouse": "COMPUTE_WH",
 					"password": {
