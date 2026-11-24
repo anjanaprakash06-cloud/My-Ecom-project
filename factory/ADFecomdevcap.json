@@ -1,0 +1,16 @@
+{
+	"name": "ADFecomdevcap",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true,
+			"isExplicitlySet": false
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "61421cf8-ac61-4961-a87e-f052ae3633bb",
+		"tenantId": "683f129d-4ee0-43de-871f-93bea960b640"
+	}
+}
